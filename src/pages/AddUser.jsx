@@ -11,13 +11,9 @@ const AddUser = () => {
     x++
     const addUser=async()=>{
        const newUser={
-        firstName:firstName,
-        lastName:lastName,
-        email:email,
-        age:age,
-        id:x
+        
       }
-      const data=await axios.post('http://localhost:8000/results',newUser)
+      const data=await axios.post('https://www.melivecode.com/api/users',newUser)
       
     }
     addUser();
