@@ -5,12 +5,12 @@ const Header = () => {
     <header>
         <div className="container">
             <div className="row all">
-            <div className="col-lg-9 icn">
+            <div className="col-lg-8 col-6 icn">
                 <Link to='/'>Code.az</Link>
             </div>
-            <div className="col-lg-3 nav">
+            <div className="col-lg-4 col-6 nav">
                 <Link to='/'>Home</Link>
-                <Link to='/add'>Add User</Link>
+                <Link to='/login'>Admin</Link>
             </div>
             </div>
         </div>
