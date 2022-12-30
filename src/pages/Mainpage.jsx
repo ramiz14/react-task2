@@ -21,6 +21,7 @@ const Mainpage = (props) => {
       <th scope='col'>Image</th>
       <th scope="col">Full Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,7 @@ const Mainpage = (props) => {
           <td className='img'><img src={user.avatar} alt="" /></td>
           <td>{user.fname} {user.lname}</td>
           <td>{user.username}</td>
+          <td>{user.date}</td>
           
         </tr>
       )

@@ -16,9 +16,8 @@ function App() {
   
   useEffect(()=>{
     const getUsers= async () =>{
-      const response=await axios.get('https://melivecode.com/api/users')
+      const response=await axios.get('http://localhost:8000/users')
       setUsers(response.data)
-      console.log(response)
     }
     getUsers();
   },[])
@@ -32,7 +31,7 @@ function App() {
           <Route path='/admin' element={<Admin Users={users} />} />
           <Route path='/edit' element={<EditUser />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/add' element={<AddUser />} />
+          <Route path='/add' element={<AddUser Users={users}/>} />
         </Routes>
       </BrowserRouter>
     

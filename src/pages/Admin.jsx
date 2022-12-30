@@ -8,13 +8,6 @@ import { Link } from 'react-router-dom';
 
 const Admin = (props) => {
     const [value,setValue]=useState('')
-    const deleteHandler=(id)=>{
-    const deleteUser=async ()=>{
-      await axios.delete(`https://www.melivecode.com/api/users/${id}`)
-      .then(console.log(id))
-    }
-    deleteUser()
-  }
   const valueHandler=(e) =>{
     setValue(e.target.value)
   }
@@ -30,6 +23,7 @@ const Admin = (props) => {
     <th scope='col'>Image</th>
     <th scope="col">Full Name</th>
     <th scope="col">Email</th>
+    <th scope="col">Date</th>
     <th scope='col'>Edit</th>
   </tr>
 </thead>
@@ -42,7 +36,8 @@ const Admin = (props) => {
         <td className='img'><img src={user.avatar} alt="" /></td>
         <td>{user.fname} {user.lname}</td>
         <td>{user.username}</td>
-        <td><Link to='edit'><button className='btn btn-warning'><AiFillEdit />Edit</button></Link><button onClick={deleteHandler} className='btn btn-danger'><FaTrash /> Delete</button></td>
+        <td>{user.date}</td>
+        <td><Link state={{id:user.id}} to='/edit'><button className='btn btn-warning'><AiFillEdit />Edit</button></Link><button onClick={async()=>{ await axios.delete(`http://localhost:8000/users/${user.id}`)}} className='btn btn-danger'><FaTrash /> Delete</button></td>
       </tr>
     )
    })

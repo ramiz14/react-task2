@@ -27,7 +27,9 @@ header{
 }
 .img img{
   height: 50px;
+  width: 50px;
   object-fit: contain;
+  border-radius: 100%;
 }
 .login-box{
   width: 40%;
@@ -43,6 +45,12 @@ header{
 }
 
 .avatar img{
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.edit-avatar{
   height: 100px;
   width: 100px;
   border-radius: 100%;
